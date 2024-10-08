@@ -24,7 +24,7 @@ function romanToInt(s) {
             total += currentValue;
         }
 
-        // Update the previous value for the next iteration
+
         prevValue = currentValue;
     }
 
