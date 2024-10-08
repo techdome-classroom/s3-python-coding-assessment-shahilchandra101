@@ -13,7 +13,6 @@ function romanToInt(s) {
     let total = 0;
     let prevValue = 0;
 
-    // Traverse through each character in the input string
     for (let i = s.length - 1; i >= 0; i--) {
         const currentValue = romanMap[s[i]];
 
