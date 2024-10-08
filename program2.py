@@ -1,35 +1,30 @@
-function romanToInt(s) {
- 
-    const romanMap = {
-        'I': 1,
-        'V': 5,
-        'X': 10,
-        'L': 50,
-        'C': 100,
-        'D': 500,
-        'M': 1000
-    };
-    
-    let total = 0;
-    let prevValue = 0;
+class Solution(object):
+    def romanToInt(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
 
-    for (let i = s.length - 1; i >= 0; i--) {
-        const currentValue = romanMap[s[i]];
-
-        // If the current value is smaller than the previous value, subtract it
-        if (currentValue < prevValue) {
-            total -= currentValue;
-        } else {
-            // Otherwise, add the current value
-            total += currentValue;
+        roman_map = {
+            'I': 1, 'V': 5, 'X': 10, 'L': 50,
+            'C': 100, 'D': 500, 'M': 1000
         }
+        
+        total = 0
+        n = len(s)
+        
 
+        for i in range(n):
 
-        prevValue = currentValue;
-    }
+            if i < n - 1 and roman_map[s[i]] < roman_map[s[i + 1]]:
+                total -= roman_map[s[i]]
+            else:
 
-    return total;
-}
+                total += roman_map[s[i]]
+        
+        return total
 
-
-module.exports = { romanToInt };
+sol = Solution()
+print(sol.romanToInt("III"))   
+print(sol.romanToInt("LVIII"))  
+print(sol.romanToInt("MCMXCIV"))
