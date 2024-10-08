@@ -16,7 +16,6 @@ def romanToInt(s: str) -> int:
         if i < n - 1 and roman_to_int[s[i]] < roman_to_int[s[i + 1]]:
             total -= roman_to_int[s[i]]
         else:
-            # Otherwise, add it
             total += roman_to_int[s[i]]
     
     return total
