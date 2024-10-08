@@ -15,7 +15,7 @@ def romanToInt(s: str) -> int:
     
 
     for i in range(n):
-        # Check if we're in a subtraction case
+
         if i < n - 1 and roman_to_int[s[i]] < roman_to_int[s[i + 1]]:
             total -= roman_to_int[s[i]]
         else:
